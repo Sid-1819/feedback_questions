@@ -22,16 +22,6 @@ export default function RatingType({
   const [value, setValue] = createSignal(0)
   const [error, setError] = createSignal("")
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    if (required && value() < min) {
-      setError("Please select a rating.")
-    } else {
-      setError("")
-      // handle valid rating here
-    }
-  }
-
   return (
     <div class="bg-white rounded-2xl w-full max-w-md mx-auto transition-all duration-300">
       <div class="px-8 py-6 border-b">
@@ -41,7 +31,7 @@ export default function RatingType({
         )}
       </div>
       <div class="px-8 py-6">
-        <form class="space-y-6" onSubmit={handleSubmit} autoComplete="off">
+        <form class="space-y-6"  >
           <div>
             <div class="flex items-center justify-between mb-2">
               <span class="text-gray-500 text-sm">{minLabel}</span>
@@ -63,9 +53,9 @@ export default function RatingType({
                     stroke="currentColor"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width={2}
                       d="M12 17.75l-6.172 3.245 1.179-6.88L2 9.755l6.904-1.002L12 2.75l3.096 6.003L22 9.755l-5.007 4.36 1.179 6.88z"
                     />
                   </svg>

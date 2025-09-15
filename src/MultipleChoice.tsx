@@ -26,15 +26,6 @@ export default function MultipleChoice({
     )
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    if (required && selected().length === 0) {
-      setError("Please select at least one option.")
-    } else {
-      setError("")
-      // handle valid selection here
-    }
-  }
 
   return (
     <div class="bg-white rounded-2xl w-full max-w-md mx-auto transition-all duration-300 mb-6">
@@ -43,7 +34,7 @@ export default function MultipleChoice({
         {description && <p class="text-gray-500 text-base mt-2">{description}</p>}
       </div>
       <div class="px-8 py-6">
-        <form class="space-y-6" onSubmit={handleSubmit} autoComplete="off">
+        <form class="space-y-6"  >
           <div>
             {displayMode === "checkbox" ? (
               <div class="space-y-2">

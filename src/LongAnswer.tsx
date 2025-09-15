@@ -19,21 +19,7 @@ export default function LongAnswer({
   const [error, setError] = createSignal("")
   const [submitted, setSubmitted] = createSignal(false)
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    setSubmitted(true)
-    const value = answer().trim()
-    if (required && !value) {
-      setError("This question is required.")
-    } else if (value.length < minLength) {
-      setError(`Answer must be at least ${minLength} characters.`)
-    } else if (value.length > maxLength) {
-      setError(`Answer must be at most ${maxLength} characters.`)
-    } else {
-      setError("")
-      // handle valid answer here
-    }
-  }
+ 
 
   return (
     <div class="bg-white rounded-2xl w-full max-w-md mx-auto transition-all duration-300 mb-6">
@@ -42,7 +28,7 @@ export default function LongAnswer({
         {description && <p class="text-gray-500 text-base mt-2">{description}</p>}
       </div>
       <div class="px-8 py-6">
-        <form class="space-y-6" onSubmit={handleSubmit} autoComplete="off">
+        <form class="space-y-6"  >
           <div>
             <textarea
               id="long-answer"

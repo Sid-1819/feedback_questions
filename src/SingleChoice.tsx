@@ -18,15 +18,6 @@ export default function SingleChoice({
   const [selected, setSelected] = createSignal<string | null>(null)
   const [error, setError] = createSignal("")
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    if (required && !selected()) {
-      setError("Please select an option.")
-    } else {
-      setError("")
-      // handle valid selection here
-    }
-  }
 
   return (
     <div class="bg-white rounded-2xl w-full max-w-md mx-auto transition-all duration-300 mb-6">
@@ -35,7 +26,7 @@ export default function SingleChoice({
         {description && <p class="text-gray-500 text-base mt-2">{description}</p>}
       </div>
       <div class="px-8 py-6">
-        <form class="space-y-6" onSubmit={handleSubmit} autoComplete="off">
+        <form class="space-y-6"  >
           <div>
             {displayMode === "radio" ? (
               <div class="space-y-2">

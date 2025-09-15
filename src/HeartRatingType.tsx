@@ -18,15 +18,6 @@ export default function HeartRatingType({
   const [value, setValue] = createSignal(0)
   const [error, setError] = createSignal("")
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    if (required && value() < min) {
-      setError("Please select a rating.")
-    } else {
-      setError("")
-      // handle valid rating here
-    }
-  }
 
   return (
     <div class="bg-white rounded-2xl w-full max-w-md mx-auto transition-all duration-300 mb-6">
@@ -35,7 +26,7 @@ export default function HeartRatingType({
         {description && <p class="text-gray-500 text-base mt-2">{description}</p>}
       </div>
       <div class="px-8 py-6">
-        <form class="space-y-6" onSubmit={handleSubmit} autoComplete="off">
+        <form class="space-y-6"  >
           <div class="flex justify-center items-center space-x-2 mt-2">
             {[...Array(max)].map((_, i) => (
               <button
@@ -52,9 +43,9 @@ export default function HeartRatingType({
                   stroke="currentColor"
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width={2}
                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
                   />
                 </svg>

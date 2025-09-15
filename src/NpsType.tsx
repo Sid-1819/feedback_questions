@@ -22,16 +22,6 @@ export default function NpsType({
   const [value, setValue] = createSignal<number | null>(null)
   const [error, setError] = createSignal("")
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    if (required && value() === null) {
-      setError("Please select a score.")
-    } else {
-      setError("")
-      // handle valid NPS value here
-    }
-  }
-
   return (
     <div class="bg-white rounded-2xl w-full max-w-md mx-auto transition-all duration-300">
       <div class="px-8 py-6 border-b">
@@ -41,7 +31,7 @@ export default function NpsType({
         )}
       </div>
       <div class="px-8 py-6">
-        <form class="space-y-6" onSubmit={handleSubmit} autoComplete="off">
+        <form class="space-y-6"  >
           <div>
             <div class="flex items-center justify-between mb-2">
               <span class="text-gray-500 text-sm">{minLabel}</span>
