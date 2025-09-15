@@ -56,9 +56,6 @@ export default function NpsType({
                 )
               })}
             </div>
-            <div class="text-center text-blue-600 font-bold mt-2">
-              {value() !== null ? `Selected: ${value()}` : "No score selected"}
-            </div>
             {error() && (
               <p class="text-red-500 text-sm mt-2">{error()}</p>
             )}

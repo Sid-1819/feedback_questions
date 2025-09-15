@@ -52,9 +52,6 @@ export default function HeartRatingType({
               </button>
             ))}
           </div>
-          <div class="text-center text-pink-600 font-bold mt-2">
-            {value() > 0 ? value() : "No rating"}
-          </div>
           {error() && <p class="text-red-500 text-sm mt-2">{error()}</p>}
           <div class="flex justify-between">
             <button
